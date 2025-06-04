@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Business Card Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Software Engineer Business Card Generator</h1>
+        
+        <div class="form-container">
+            <h2>Enter Your Information</h2>
+            <form id="businessCardForm">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="title">Job Title:</label>
+                    <input type="text" id="title" placeholder="Senior Software Engineer" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company:</label>
+                    <input type="text" id="company" placeholder="Tech Solutions Inc." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="john.doe@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" placeholder="+1 (555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label for="website">Website/Portfolio:</label>
+                    <input type="url" id="website" placeholder="https://johndoe.dev">
+                </div>
+                
+                <div class="form-group">
+                    <label for="github">GitHub Username:</label>
+                    <input type="text" id="github" placeholder="johndoe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn Username:</label>
+                    <input type="text" id="linkedin" placeholder="johndoe">
+                </div>
+                
+                <div class="form-group">
+                    <label for="skills">Top Skills (comma separated):</label>
+                    <input type="text" id="skills" placeholder="JavaScript, React, Node.js, TypeScript">
+                </div>
+
+                <div class="form-group">
+                    <label for="theme">Color Theme:</label>
+                    <select id="theme">
+                        <option value="standard">Standard Blue</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="gradient">Gradient</option>
+                        <option value="minimalist">Minimalist</option>
+                        <option value="tech">Tech Theme</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="qrcode">Add QR Code to Portfolio:</label>
+                    <input type="checkbox" id="qrcode" checked>
+                </div>
+                
+                <div class="buttons">
+                    <button type="submit" class="generate-btn">Generate Business Card</button>
+                    <button type="button" id="downloadBtn" class="download-btn" disabled>Download Business Card</button>
+                    <button type="reset" class="reset-btn">Reset</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="preview-container">
+            <h2>Preview</h2>
+            <div id="businessCardPreview" class="business-card standard">
+                <div class="card-content">
+                    <div class="card-header">
+                        <h2 id="previewName">Your Name</h2>
+                        <p id="previewTitle">Software Engineer</p>
+                    </div>
+                    <div class="card-company" id="previewCompany">Company Name</div>
+                    <div class="card-contact">
+                        <p><i class="far fa-envelope"></i> <span id="previewEmail">email@example.com</span></p>
+                        <p><i class="fas fa-phone"></i> <span id="previewPhone">+1 (555) 123-4567</span></p>
+                        <p><i class="fas fa-globe"></i> <span id="previewWebsite">website.com</span></p>
+                    </div>
+                    <div class="card-social">
+                        <p><i class="fab fa-github"></i> <span id="previewGithub">github.com/username</span></p>
+                        <p><i class="fab fa-linkedin"></i> <span id="previewLinkedin">linkedin.com/in/username</span></p>
+                    </div>
+                    <div class="card-skills">
+                        <p id="previewSkills">JavaScript, React, Node.js</p>
+                    </div>
+                    <div class="qr-code" id="qrCodeContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/themes/default.css" id="theme-stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Business Card Generator</h1>
+        <form id="business-card-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" required>
+
+            <label for="skills">Technical Skills:</label>
+            <textarea id="skills" required></textarea>
+
+            <label for="social-media">Social Media Links:</label>
+            <input type="url" id="github" placeholder="GitHub URL">
+            <input type="url" id="linkedin" placeholder="LinkedIn URL">
+            <input type="url" id="twitter" placeholder="Twitter URL">
+
+            <button type="submit">Generate Card</button>
+        </form>
+
+        <div id="card-preview" class="card-preview">
+            <h2 id="preview-name"></h2>
+            <p id="preview-title"></p>
+            <p id="preview-email"></p>
+            <p id="preview-phone"></p>
+            <p id="preview-skills"></p>
+            <div id="social-icons"></div>
+            <div id="qrcode"></div>
+        </div>
+
+        <button id="download-button">Download Card</button>
+        <button id="theme-toggle">Switch Theme</button>
+    </div>
+
+    <script src="lib/qrcode.min.js"></script>
+    <script src="lib/html2canvas.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/cardRenderer.js"></script>
+    <script src="js/themeManager.js"></script>
+</body>
+</html>
